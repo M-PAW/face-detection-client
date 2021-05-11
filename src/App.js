@@ -84,7 +84,7 @@ export default class App extends Component {
   onButtonSubmit = () => {
     this.setState({imageUrl: this.state.input})
 
-    fetch('http://localhost:5050/imageurl', {
+    fetch('https://frozen-cliffs-09647.herokuapp.com/imageurl', {
       method: 'post',
       headers: {'Content-Type' : 'application/json'},
       body: JSON.stringify({
@@ -95,7 +95,7 @@ export default class App extends Component {
     .then((res) => {
       console.log(res);
       if (res) {
-        fetch('http://localhost:5050/image', {
+        fetch('https://frozen-cliffs-09647.herokuapp.com/image', {
           method: 'put',
           headers: {'Content-Type' : 'application/json'},
           body: JSON.stringify({
